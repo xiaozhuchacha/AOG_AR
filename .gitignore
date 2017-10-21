@@ -34,7 +34,6 @@ obj/
 *.ipch
 *.opensdf
 *.sdf
-*.obj
 *.tlog
 *.log
 *.idb
