@@ -5,6 +5,8 @@ using System.Collections;
 using HoloToolkit.Unity.InputModule;
 
 public class Inventory : MonoBehaviour {
+    public STCAOGPanelControl stcPanelControl = null; 
+
     public List<Transform> layer1 = new List<Transform>();
     [SerializeField] Transform layer2;
     public List<Transform> layer3 = new List<Transform>();
@@ -87,7 +89,10 @@ public class Inventory : MonoBehaviour {
 
         statusText.text = SimpleTree.nextActionFirstHalf + "\n" + SimpleTree.nextActionSecondHalf;
 
-        udpManager.executeAction(currentAction.getActionName().ToLower());
+        string currentActionName = currentAction.getActionName().ToLower();
+        udpManager.executeAction(currentActionName);
+        stcPanelControl.loadNewImage(currentActionName);
+
     }
     
 
@@ -180,6 +185,8 @@ public class Inventory : MonoBehaviour {
     }
 
     void Start () {
+        stcPanelControl = GetComponent<STCAOGPanelControl>();
+
         redLine = Resources.Load("redStraightArrow", typeof(Sprite)) as Sprite;
         redCurve = Resources.Load("redCurveArrow", typeof(Sprite)) as Sprite;
         redBox = Resources.Load("redBox", typeof(Sprite)) as Sprite;
