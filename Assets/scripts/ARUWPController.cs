@@ -453,6 +453,7 @@ public class ARUWPController : MonoBehaviour {
         }
         Application.targetFrameRate = 60;
         unaddedMarkers = GetComponents<ARUWPMarker>();
+        Debug.Log("ar controller init!!!!");
     }
     
     /// <summary>

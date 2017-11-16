@@ -128,8 +128,8 @@ public class SimpleTree {
     			// visit one of its children
     			nextActionSecondHalf = "    Chosen From: \n    " + node.simpleOrNodeChildrenName();
 
-    			int childToChoose = Random.Range(1, 1 + node.childrenNumber);
-                // int childToChoose = 2;
+    			// int childToChoose = Random.Range(1, 1 + node.childrenNumber);
+                int childToChoose = 2;
     			return TravelToNextEndNode(node.GetChild(childToChoose), false);
     		} else {
     			// find an and node

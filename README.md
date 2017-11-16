@@ -33,7 +33,7 @@ Class to represent the and-or graph structure. Provide function to go to the nex
 Implements drag and drop on canvas to enable and-or graph patching. Parse the and-or graph to generate action sequence.
 
 #### OnScreenKeyboard.cs
-Helper class to use TouchScreenKeyboard class to edit new action name.
+Helper class to use TouchScreenKeyboard class to edit new action name. (Requires building in XMAL instead of D3D)
 
 #### HandDraggableCustom.cs, GripperNewPoseControl.cs, EditAction.cs
 Allow user to edit an end node, and set new pose for the action by dragging a gripper hologram with hand gesture.

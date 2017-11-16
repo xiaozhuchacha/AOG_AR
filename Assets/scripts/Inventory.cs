@@ -341,17 +341,19 @@ public class Inventory : MonoBehaviour {
             //     text.text = layer2.GetChild(1).GetComponent<Slot>().item.transform.name;
             // }
             action2[cnt] = layer2.GetChild(cnt).GetComponent<Slot>().item.transform.name;
-            cnt++; 
+            cnt++;
         }
     }
 
     public void parse()
     {
-        int[] waitIdx = { 1,2,5,6}; 
+        int[] waitIdx = { 1,2,5,6};
         ActionList.GetChild(1).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[0][Random.Range(0,2)];
-        ActionList.GetChild(2).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[1][Random.Range(0, 2)];
+        // ActionList.GetChild(2).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[1][Random.Range(0, 2)];
+        ActionList.GetChild(2).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[1][1];
         ActionList.GetChild(5).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[0][Random.Range(0, 2)];
-        ActionList.GetChild(6).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[1][Random.Range(0, 2)];
+        // ActionList.GetChild(6).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[1][Random.Range(0, 2)];
+        ActionList.GetChild(6).GetComponent<Image>().transform.GetChild(0).GetComponent<Text>().text = action3[1][1];
     
     }
 }

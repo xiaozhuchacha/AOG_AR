@@ -81,7 +81,7 @@ public class ARUWPVideo : MonoBehaviour {
     /// At runtime, please use EnablePreview() and DisablePreview() to control it. [public use]
     /// [initialization only]
     /// </summary>
-    public bool videoPreview = true;
+    public bool videoPreview = false;
 
     /// <summary>
     /// Initial value for the GameObject to hold the video preview. It is a Quad object in the
@@ -319,8 +319,9 @@ public class ARUWPVideo : MonoBehaviour {
             Debug.Log(TAG + ": not able to find ARUWPController");
             Application.Quit();
         }
-        mediaMaterial = previewPlane.GetComponent<MeshRenderer>().material;
-
+        Debug.Log("arcontroller init!");
+        Debug.Log("cannot find previewPlane?");
+        // mediaMaterial = previewPlane.GetComponent<MeshRenderer>().material;
         if (videoPreview) {
             videoPreview = false;
             // EnablePreview();
@@ -350,23 +351,25 @@ public class ARUWPVideo : MonoBehaviour {
     /// initialization of video pipeline is done. [internal use]
     /// </summary>
     private void Update() {
-
+        Debug.Log("update 0");
         if (signalInitDone) {
-            mediaTexture = new Texture2D(controller.frameWidth, controller.frameHeight, TextureFormat.RGBA32, false);
-            mediaMaterial.mainTexture = mediaTexture;
+            // mediaTexture = new Texture2D(controller.frameWidth, controller.frameHeight, TextureFormat.RGBA32, false);
+            // mediaMaterial.mainTexture = mediaTexture;
             signalInitDone = false;
         }
 
+        Debug.Log("1");
 
-        if (videoPreview && previewPlane.activeSelf && mediaTexture != null && signalTrackingUpdated) {
-            UpdateVideoPreview();
-        }
+        // if (videoPreview && previewPlane.activeSelf && mediaTexture != null && signalTrackingUpdated) {
+        //     UpdateVideoPreview();
+        // }
+        Debug.Log("2");
 
         videoDeltaTime = ARUWPUtils.GetVideoDeltaTime();
+        Debug.Log("3");
         if (videoFPS != null) {
             videoFPS.text = string.Format("Video:   {0:0.0} ms ({1:0.} fps)", videoDeltaTime, 1000.0f / videoDeltaTime);
         }
-
         signalTrackingUpdated = false;
     }
 
@@ -409,7 +412,7 @@ public class ARUWPVideo : MonoBehaviour {
     /// </summary>
     public void EnablePreview() {
         Debug.Log(TAG + ": EnablePreview() called");
-        previewPlane.SetActive(true);
+        // previewPlane.SetActive(true);
         videoPreview = true;
     }
 
@@ -419,7 +422,7 @@ public class ARUWPVideo : MonoBehaviour {
     /// </summary>
     public void DisablePreview() {
         Debug.Log(TAG + ": DisablePreview() called");
-        previewPlane.SetActive(false);
+        // previewPlane.SetActive(false);
         videoPreview = false;
     }
 

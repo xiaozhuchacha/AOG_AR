@@ -11,6 +11,7 @@ public class STCAOGPanelControl : MonoBehaviour {
     // private Texture2D mediaTexture = null;
 
     private string currentActionName;
+    private int push_cnt = 0;
 
 
 	public void toggleSTCPanel(){
@@ -33,7 +34,14 @@ public class STCAOGPanelControl : MonoBehaviour {
 		if(isShowingSTC){
 			if (currentActionName == null){
 				return;
+			} else if (currentActionName == "push"){
+				push_cnt += 1;
+				currentActionName += push_cnt.ToString();
+				if (push_cnt == 2){
+					push_cnt = 0;
+				}
 			}
+			Debug.Log("Current Action Name: " + currentActionName);
 			Texture2D mediaTexture = (Texture2D)Resources.Load("stc_aog/" + currentActionName);
 			STCPanel.texture = mediaTexture;
 
