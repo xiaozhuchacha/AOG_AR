@@ -6,6 +6,7 @@
 
 #### Library Used
 * [tacopie](https://github.com/Cylix/tacopie)
+* [OpenBottle/robot_control](https://github.com/xiaozhuchacha/OpenBottle/tree/master/robot_control) for controlling a rethink baxter robot
 
 #### source files 
 ##### TCPPackageConstants.h
@@ -14,7 +15,7 @@ Defines constants for the format of the packets transmitted between ROS and Holo
 ##### send_to_hololens.cpp
 Establishes TCP connection with Hololens. Listens to different types of ROS messages (TF, image etc.) , and does some processing specific to the robot(Baxter) and gripper used in this application. Send updates on robot states to Hololens, and also listens to commands and updates sent by user from Hololens.
 
-### Unity Application : Assets/ , ProjectSettings/
+### Unity Application : Assets/  ProjectSettings/
 
 #### Development Platform 
 * Microsoft Hololens
