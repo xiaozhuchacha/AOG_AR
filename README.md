@@ -1,7 +1,6 @@
 # AOG_AR
 
-## Code for ICRA 2017 paper
-## Interactive Robot Knowledge Patching using Augmented Reality
+### Code for ICRA 2017 paper - Interactive Robot Knowledge Patching using Augmented Reality
 
 ### ROS Package
 send_to_hololens/
