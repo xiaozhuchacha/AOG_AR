@@ -3,16 +3,29 @@
 ### Code for ICRA 2017 paper
 ### Interactive Robot Knowledge Patching using Augmented Reality
 
-### Development Platform
+### ROS Package
+send_to_hololens/
+
+#### Library Used
+* [tacopie](https://github.com/Cylix/tacopie)
+
+#### TCPPackageConstants.h
+Defines constants for the format of the packets transmitted between ROS and Hololens.
+
+#### send_to_hololens.cpp
+Establishes TCP connection with Hololens. Listens to different types of ROS messages (TF, image etc.) , and does some processing specific to the robot(Baxter) and gripper used in this application. Send updates on robot states to Hololens, and also listens to commands and updates sent by user from Hololens.
+
+### Unity Application
+#### Development Platform 
 * Microsoft Hololens
 * Unity 5.6
 * Visual Studio 2017
 
-### Library Used
+#### Library Used
 * [MixedRealityToolkit-Unity](https://github.com/Microsoft/MixedRealityToolkit-Unity)
 * [HoloLensARToolKit](https://github.com/qian256/HoloLensARToolKit)
 
-## Overview
+### Overview
 This application receives real-time updates on robot states(e.g. TF, kinect images, gripper force) from ROS, and displays those information as hololens to users through Microsoft Hololens platform. The user can also see the knowledge base of the robot represented as an and-or graph, and interactively patch the knowledge structure. 
 
 
