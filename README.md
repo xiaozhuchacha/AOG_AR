@@ -2,20 +2,20 @@
 
 ### Code for ICRA 2017 paper - Interactive Robot Knowledge Patching using Augmented Reality
 
-### ROS Package
-send_to_hololens/
+### ROS Package : send_to_hololens/
 
 #### Library Used
 * [tacopie](https://github.com/Cylix/tacopie)
 
 #### source files 
-#### TCPPackageConstants.h
+##### TCPPackageConstants.h
 Defines constants for the format of the packets transmitted between ROS and Hololens.
 
-#### send_to_hololens.cpp
+##### send_to_hololens.cpp
 Establishes TCP connection with Hololens. Listens to different types of ROS messages (TF, image etc.) , and does some processing specific to the robot(Baxter) and gripper used in this application. Send updates on robot states to Hololens, and also listens to commands and updates sent by user from Hololens.
 
-### Unity Application
+### Unity Application : Assets/ , ProjectSettings/
+
 #### Development Platform 
 * Microsoft Hololens
 * Unity 5.6
