@@ -51,3 +51,5 @@ Helper class to use TouchScreenKeyboard class to edit new action name. (Requires
 
 ##### HandDraggableCustom.cs, GripperNewPoseControl.cs, EditAction.cs
 Allow user to edit an end node, and set new pose for the action by dragging a gripper hologram with hand gesture.
+
+Wiki: https://github.com/xiaozhuchacha/AOG_AR/wiki
